@@ -1,0 +1,7 @@
+Host dnsserver has ip 10.0.0.1
+Host badguy.ru has ip 172.16.200.1
+Host bankofrhul.co.uk has ip 10.0.0.1
+
+IP addresses identified using DiG.
+
+The secret is c93812df8c1f9772068caa320dfc164891ccd3674068ee40d99354e5a44539fa
