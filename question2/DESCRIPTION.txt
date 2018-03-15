@@ -1,0 +1,6 @@
+To complete question 2, I asked dnsserver to resolve a random hostname's IP not in its cache.
+
+This was done using:
+dig asdfasdfasdfasdfasdfasdfasdf.bankofrhul.co.uk
+
+The secret for question 2 is 8418ee43499588d53e4f71dcb03eb67d233cbce7cb63dbe6ff86ca6f4610d212
