@@ -1,0 +1,7 @@
+The key to 4 is to exploit the race condition discovered in the Kaminski attack. All you do to get this is to ask
+the vulnerable dns server for a random subdomain (in my case this was done manually by calling dig on a random subdomain
+of bankofrhul.co.uk each time), and then immediately flood the server with forged answers like those created in
+my answer to question 3. In the event that this does not work the first time around, simply regenerate a new random
+subdomain, perform the query using it, flood the server with fraudulent responses and repeat until you win!
+
+The secret to level 4 is 042ad0678a770d6a95f6f5740e3c377361d35a3c0885ff9e1efd4cf3879af3ae
