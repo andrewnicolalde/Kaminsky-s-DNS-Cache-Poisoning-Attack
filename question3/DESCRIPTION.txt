@@ -1,0 +1,16 @@
+The dns server sends all recursive queries over port 40043.
+
+I wrote the solution to question 3 using a library called scapy (http://www.secdev.org/projects/scapy/)
+
+This is an amazing little tool that allows to to easily and eloquently create & layer protocols without the use of hex!
+😭🔫
+
+I actually had to SCP the .deb for Scapy over to the attack server via teaching and install it manually,
+which was a pain.
+
+Essentially, I crafted a DNS response which sits inside a UDP packet addressed to port 40043 (which dnsserver uses to
+send recursive queries and receive and their answers), which itself sits inside an IP datagram, who's header has a
+forged sender IP address of 10.0.0.1, which is the IP of ns.bankofrhul.co.uk, the authoritative nameserver for the
+bankofrhul.co.uk zone.
+
+The secret for question 3 is a1a809f854e81cd6e959ac849da489c384465bcec70d4235d639b758f6f1f3ad.

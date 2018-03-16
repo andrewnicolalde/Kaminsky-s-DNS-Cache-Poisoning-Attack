@@ -1,15 +1,19 @@
-from dpkt.udp import UDP
-from dpkt.ip import IP
-import dpkt
-import socket
+###
+# PRE-RUNNING STEPS: Run the following in your shell before running this code
+# wget http://ftp.de.debian.org/debian/pool/main/s/scapy/python-scapy_2.2.0-1_all.deb
+# dpkg -i python-scapy_2.2.0-1_all.deb
+###
+from scapy.all import *
+from scapy.layers.dns import DNS
+from scapy.layers.inet import IP, UDP
 
-udp = UDP(data='ayyyyyyyyyyyyyyyyyyyyyyyyyyyyy')
-src = socket.inet_aton("192.168.0.5")
-dest = socket.inet_aton("192.168.0.74")
-ip = IP(src=src, dst=dest, data=udp)
+# Create each layer of the packet
+iplayer = IP(src = "10.0.0.1", dst = "10.10.0.1")
+udplayer = UDP(dport = 40043, chksum = None) # Please autogenerate the checksum
+dnslayer = DNS(qr = 1) # This is a response
 
-#print src
-#print dest
+# Combine layers
+totalpacket = iplayer / udplayer / dnslayer
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_RAW)
-sock.sendto(ip.pack(), ("127.0.0.1", 900))
+# Execute Order 66
+send(totalpacket, loop=1)
