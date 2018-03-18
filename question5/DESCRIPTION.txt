@@ -1,0 +1,9 @@
+While I'm sure some solutions to question 5 include more clever ways of poisoning the cache, such as exploiting
+imperfections in the random number generator that dnsserver uses to generate query IDs, my solution was far simpler.
+
+Simply put, I guess the query ID by generating a random number between 0 and 2^16 - 1 or 65535, and sent that just after
+I had sent a query. After I wasn't getting anywhere after around an hour, I thought "How can I improve this program, which
+uses brute force to solve a problem?" The answer came in a flash: "with more brute force!" So I ran the program in 6
+processes and lo and behold, I got lucky! I'm so sorry attack server... I'm so sorry.
+
+The secret for question 5 is 8cd3ddef121f892ae2cf886c92717cd32961e857d72bfd91812b909f50233f19
