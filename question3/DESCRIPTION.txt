@@ -9,7 +9,7 @@ I actually had to SCP the .deb for Scapy over to the attack server via teaching 
 which was a pain.
 
 Essentially, I crafted a DNS response which sits inside a UDP packet addressed to port 40043 (which dnsserver uses to
-send recursive queries and receive and their answers), which itself sits inside an IP datagram, who's header has a
+send recursive queries and receive and their answers), which itself sits inside an IP datagram, whose header has a
 forged sender IP address of 10.0.0.1, which is the IP of ns.bankofrhul.co.uk, the authoritative nameserver for the
 bankofrhul.co.uk zone.
 
