@@ -2,7 +2,7 @@ The dns server sends all recursive queries over port 40043.
 
 I wrote the solution to question 3 using a library called scapy (http://www.secdev.org/projects/scapy/)
 
-This is an amazing little tool that allows to to easily and eloquently create & layer protocols without the use of hex!
+This is an amazing little tool that allows you to easily and eloquently create & layer protocols without the use of hex!
 😭🔫
 
 I actually had to SCP the .deb for Scapy over to the attack server via teaching and install it manually,
